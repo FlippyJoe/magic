@@ -1,0 +1,589 @@
+:root {
+  --background: linear-gradient(
+    to right,
+    rgb(131, 198, 231),
+    rgb(48, 136, 236)
+  );
+  --href-color: rgb(168, 167, 236);
+  --href-weight: 800;
+  --nav-bar-color: linear-gradient(
+    to right,
+    rgba(45, 44, 44 0.8),
+    rgba(26, 18, 114, 0.95)
+  );
+  --font-color: rgb(245, 241, 241);
+  --font-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Border color */
+  --p-size: clamp(24px, 1.5vw, 18px);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: whitesmoke;
+  text-shadow: var(--font-shadow);
+  height: 100vh;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* Background video */
+.videoContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.backVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+
+/* ----------- Home page ----------- */
+
+/* ------------------- Nav bar -------------------- */
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 999;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 25px;
+  background-color: rgba(57, 57, 57, 0.9);
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid blue;
+  border-bottom: 1px solid blue;
+  transition: 1s ease-in-out;
+  animation: enterPage 2s ease-in 1 both;
+}
+
+@keyframes enterPage {
+  from {
+    opacity: 0;
+    font-size: 1px;
+  }
+  to {
+    opacity: 1;
+    font-size: clamp(1rem, 2vw, 1.7rem);
+  }
+}
+
+@font-face {
+  font-family: "druidFonts";
+  src: url(./Fonts/nan-druidExtracted/NaNDruid-Sans-Black-TRIAL-BF6758fa15dc138.ttf);
+}
+
+nav a {
+  display: flex;
+  text-decoration: none;
+  color: var(--href-color);
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  font-weight: var(--href-weight);
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  transition: 0.5s ease-in-out;
+  animation: enterPage 3s ease-in 1 both;
+  font-family: "druidFonts";
+}
+
+nav a:hover {
+  color: rgb(240, 118, 53);
+  font-size: 1.1em;
+}
+
+#checkBox,
+.openBtn {
+  display: none;
+}
+
+.links .active {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ------------------ Main section ------------ */
+
+.homeMain {
+  margin-top: 75px;
+  text-align: center;
+}
+
+main h1 {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(36px, 2.5vw, 26px);
+}
+
+.hello {
+  animation: enterH1 2s ease 1s both;
+}
+
+.world {
+  animation: enterH1 2s ease 1.5s both;
+}
+
+.Iam {
+  animation: enterH1 2s ease 2s both;
+}
+
+.flippy {
+  animation: enterH1 2s ease 2.5s both;
+}
+
+@keyframes enterH1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profilePic {
+  width: clamp(200px, 75%, 300px);
+  border-radius: 50%;
+  animation: enterPic 4s ease 1s both;
+}
+
+@keyframes enterPic {
+  0% {
+    width: 0px;
+  }
+  25% {
+    transform: rotate(365deg);
+  }
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.introText p {
+  display: inline-block;
+  width: 80%;
+}
+
+.yourName {
+  animation: enterIntroText 3s ease 2s both;
+}
+
+.developer {
+  animation: enterIntroText 3s ease 3s both;
+}
+
+@keyframes enterIntroText {
+  from {
+    font-size: 0.2px;
+  }
+  to {
+    font-size: clamp(28px, 2vw, 24px);
+  }
+}
+
+.introText p {
+  animation: enterIntroText 3s ease 3s both;
+  padding: 10px;
+}
+
+/* -------------------------------------- */
+/* ------------ About ------------------- */
+
+/* main */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 63px;
+}
+
+/* ---- why? ---------- */
+
+.why,
+.how {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: whyHow 2s cubic-bezier(0.19, 0.3, 0.22, 0.3) both;
+}
+
+@keyframes whyHow {
+  0% {
+    rotate: 180deg;
+  }
+}
+
+.why {
+  background-image: url(./Images/magicalWorld.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+  background-attachment: fixed;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.about h2 {
+  font-size: clamp(50px, 2vw, 32px);
+  margin-left: 50px;
+  padding-bottom: 0;
+}
+
+.text .left {
+  grid-area: leftP;
+}
+
+.text .mid {
+  grid-area: midP;
+}
+
+.text .right {
+  grid-area: rightP;
+}
+
+.why .text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  grid-template-areas:
+    "leftP rightP"
+    "leftP rightP"
+    "midP midP";
+  margin: 100px 25px;
+}
+
+.why p {
+  font-size: var(--p-size);
+}
+
+/* ------------------ How? ---------- */
+.how {
+  background-image: url(./Images/magic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 65% 0;
+  background-attachment: fixed;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+.how .text {
+  display: grid;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas: "leftP rightP";
+}
+
+.how .text .left {
+  grid-area: leftP;
+}
+
+.how .text .p {
+  grid-area: rightP;
+}
+
+.how .text p {
+  font-size: var(--p-size);
+}
+
+.how .text {
+  margin: 25px;
+}
+
+.how h2 {
+  margin-top: 75px;
+}
+
+/* ---------------- Spells --------------------- */
+
+.spellsAll {
+  animation: spellsAppear 4s ease both;
+  height: 100vh;
+}
+
+@media (min-width: 795px) {
+  .spellsAll {
+    overflow: hidden;
+  }
+}
+
+@keyframes spellsAppear {
+  0% {
+    opacity: 0;
+    z-index: -2;
+    margin-left: -100%;
+  }
+  15% {
+    opacity: 0.2;
+    z-index: -1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Intro text */
+.spellsIntro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  color: blue;
+  text-shadow: -1px 1px white;
+  padding: 25px;
+}
+
+.spellsIntro h1 {
+  font-size: clamp(36px, 2.5vw, 20px);
+}
+
+.spellsIntro p {
+  font-size: var(--p-size);
+  font-weight: 400;
+}
+
+.spell {
+  border-radius: 20px;
+}
+
+.spellHead {
+  text-align: center;
+  color: blue;
+  text-shadow: -1px 1px white;
+  font-weight: 700;
+  font-size: clamp(32px, 2.5vw, 18px);
+}
+
+.spellText {
+  text-align: center;
+  color: blue;
+  text-shadow: -1px 1px white;
+  font-weight: 400;
+  font-size: var(--p-size);
+  padding: 10px;
+}
+
+#spell1 {
+  grid-area: spell1;
+  background: linear-gradient(
+    150deg,
+    rgba(0, 0, 255, 0.4),
+    rgba(0, 128, 0, 0.4),
+    rgba(255, 255, 0, 0.4),
+    rgba(255, 0, 0, 0.4)
+  );
+}
+
+#spell2 {
+  grid-area: spell2;
+  background: linear-gradient(
+    -150deg,
+    rgba(0, 0, 255, 0.4),
+    rgba(0, 128, 0, 0.4),
+    rgba(255, 255, 0, 0.4),
+    rgba(255, 0, 0, 0.4)
+  );
+}
+
+#spell3 {
+  grid-area: spell3;
+  background: linear-gradient(
+    75deg,
+    rgba(0, 0, 255, 0.4),
+    rgba(0, 128, 0, 0.4),
+    rgba(255, 255, 0, 0.4),
+    rgba(255, 0, 0, 0.4)
+  );
+}
+
+#spell4 {
+  grid-area: spell4;
+  background: linear-gradient(
+    -75deg,
+    rgba(0, 0, 255, 0.4),
+    rgba(0, 128, 0, 0.4),
+    rgba(255, 255, 0, 0.4),
+    rgba(255, 0, 0, 0.4)
+  );
+}
+
+.spellsMain {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 5px;
+  grid-template-areas:
+    "spell1 spell2"
+    "spell3 spell4";
+  padding: 10px;
+}
+
+/* ---------------- Media queries ----------------- */
+
+/* Backgr video aspect ratio */
+@media (min-aspect-ratio: 16/9) {
+  .backVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .backVideo {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/* ------------------------------------------------ */
+
+@media (max-width: 650px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 300px;
+    width: 200px;
+    top: -100%;
+    position: fixed;
+    background-color: rgba(57, 57, 57, 0.9);
+  }
+
+  .openBtn {
+    display: flex;
+    top: 0;
+    right: 0;
+    fill: rgb(15, 37, 242);
+    margin: 0 auto;
+    margin-right: 20px;
+    position: fixed;
+    animation: btnEnter 4s ease-in-out 1s both;
+  }
+
+  @keyframes btnEnter {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 0.3;
+      fill: green;
+    }
+    10% {
+      opacity: 0.5;
+      fill: blue;
+    }
+    25% {
+      opacity: 0.7;
+      transform: rotate(360deg);
+      fill: rgb(233, 110, 16);
+    }
+    50% {
+      opacity: 0.8;
+      fill: red;
+    }
+    60% {
+      opacity: 1;
+      fill: white;
+    }
+  }
+
+  #checkBox:checked ~ .links {
+    top: 0;
+  }
+
+  #checkBox:checked ~ #overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  /* About page */
+
+  .about {
+    margin-top: 0;
+  }
+
+  .why {
+    overflow: auto;
+  }
+
+  .why .text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 5px;
+  }
+
+  .how .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* spells */
+  .spellsMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

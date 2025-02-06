@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background: var(--background)">
+    <nav>
+      <input type="checkbox" id="checkBox" />
+      <label id="overlay" for="checkBox"></label>
+      <label for="checkBox">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          class="openBtn"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </label>
+
+      <section class="links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="spells.html">Spells</a>
+        <a href="#">Contact</a>
+      </section>
+    </nav>
+    <div class="videoContainer">
+      <video
+        src="./videos/No Copyright Video, Background, Green Screen, Motion Graphics, Animated Background, Copyright Free[480p].mkv"
+        autoplay
+        muted
+        loop
+        class="backVideo"
+        type="video/mkv"
+        plays-inline
+      ></video>
+    </div>
+
+    <br />
+    <br />
+    <main class="homeMain">
+      <h1>
+        <span class="hello">Hello</span> <span class="world">World,</span>
+        <span class="Iam">I`m</span> <span class="flippy">Flippy!</span>
+      </h1>
+      <section class="photo">
+        <img
+          src="./Images/B&WprofilePic.jpg"
+          alt="profile picture"
+          id="profilePic"
+        />
+      </section>
+      <section class="introText">
+        <h2 class="yourName">Jozsef Kohulak</h2>
+        <h2 class="developer">Front End Web Developer</h2>
+        <p>
+          I created this webpage as my first portfolio project. The theme is
+          magic in our world, ideas came from Merlin, Oz, Gandalf, and other big
+          guns of the magical world. I will tell you secret spells, magical
+          recipes to heal the body and the soul- be careful when following these
+          secrets, some might even work!
+          <br />
+          Enjoy the journey and have a great time on this page!
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
